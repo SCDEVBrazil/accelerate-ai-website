@@ -33,7 +33,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="relative z-10 flex justify-between items-center py-4 px-4">
+      <nav className="relative z-50 flex justify-between items-center py-4 px-4">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -98,37 +98,37 @@ export default function ContactPage() {
 
         {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 md:hidden"
-            onClick={() => setMobileMenuOpen(false)}
-          >
+          <div className="fixed inset-0 bg-black/95 z-50 md:hidden">
             <div className="flex flex-col items-center justify-center h-full space-y-8">
-              <Link 
-                href="/"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-semibold text-gray-200 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-500 transition-all duration-300"
-              >
-                Home
-              </Link>
               <Link 
                 href="/about"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-semibold text-gray-200 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500 transition-all duration-300"
+                className="text-3xl font-semibold text-white hover:text-blue-400 transition-all duration-300"
               >
                 About
               </Link>
               <Link 
                 href="/services"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-semibold text-gray-200 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-pink-500 transition-all duration-300"
+                className="text-3xl font-semibold text-white hover:text-blue-400 transition-all duration-300"
               >
                 Services
               </Link>
+              <Link 
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-3xl font-semibold text-white hover:text-blue-400 transition-all duration-300"
+              >
+                Contact
+              </Link>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-8 text-gray-400 hover:text-white transition-colors"
+              >
+                Close Menu
+              </button>
             </div>
-          </motion.div>
+          </div>
         )}
       </nav>
 

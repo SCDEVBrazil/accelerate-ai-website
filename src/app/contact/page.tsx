@@ -7,6 +7,7 @@ import { ArrowRight, Calendar, Shield, TrendingUp } from 'lucide-react'
 import { useState } from 'react'
 
 export default function ContactPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -51,6 +52,7 @@ export default function ContactPage() {
           </Link>
         </motion.div>
 
+        {/* Desktop Navigation */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -79,6 +81,55 @@ export default function ContactPage() {
             <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-cyan-400 to-pink-500 origin-left transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
           </Link>
         </motion.div>
+
+        {/* Mobile Navigation */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-gray-200 hover:text-white transition-colors duration-200"
+          >
+            <div className="w-6 h-6 flex flex-col justify-between">
+              <span className={`h-0.5 w-full bg-current transform transition duration-300 ease-in-out ${mobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`}></span>
+              <span className={`h-0.5 w-full bg-current transition duration-300 ease-in-out ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`h-0.5 w-full bg-current transform transition duration-300 ease-in-out ${mobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`}></span>
+            </div>
+          </button>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 md:hidden"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <div className="flex flex-col items-center justify-center h-full space-y-8">
+              <Link 
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-semibold text-gray-200 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-500 transition-all duration-300"
+              >
+                Home
+              </Link>
+              <Link 
+                href="/about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-semibold text-gray-200 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500 transition-all duration-300"
+              >
+                About
+              </Link>
+              <Link 
+                href="/services"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-semibold text-gray-200 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-pink-500 transition-all duration-300"
+              >
+                Services
+              </Link>
+            </div>
+          </motion.div>
+        )}
       </nav>
 
       {/* Hero Section */}

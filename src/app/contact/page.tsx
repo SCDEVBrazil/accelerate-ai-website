@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, Calendar, Shield, TrendingUp } from 'lucide-react'
 import { useState } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 
 export default function ContactPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

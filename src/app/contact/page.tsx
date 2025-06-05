@@ -5,30 +5,11 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, Calendar, Shield, TrendingUp } from 'lucide-react'
 import { useState } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 
 export default function ContactPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    businessName: '',
-    industry: '',
-    businessSize: '',
-    currentChallenges: '',
-    automationInterest: ''
-  })
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-  }
+  const [state, handleSubmit] = useForm("xanjnzdl")
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -266,148 +247,153 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-8 border border-gray-700"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                    placeholder="Your full name"
-                  />
+            {state.succeeded ? (
+              <div className="text-center py-12">
+                <div className="w-16 h-16 mx-auto mb-4 bg-green-500 rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-green-400 mb-2">Thank You!</h3>
+                <p className="text-gray-300">We'll contact you within 24 hours to schedule your consultation.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
+                      placeholder="Your full name"
+                    />
+                    <ValidationError prefix="Name" field="name" errors={state.errors} />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium mb-2">Business Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
+                      placeholder="your@company.com"
+                    />
+                    <ValidationError prefix="Email" field="email" errors={state.errors} />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
+                      placeholder="(555) 123-4567"
+                    />
+                    <ValidationError prefix="Phone" field="phone" errors={state.errors} />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="businessName" className="block text-sm font-medium mb-2">Company Name</label>
+                    <input
+                      type="text"
+                      id="businessName"
+                      name="businessName"
+                      required
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
+                      placeholder="Your company name"
+                    />
+                    <ValidationError prefix="Business Name" field="businessName" errors={state.errors} />
+                  </div>
+
+                  <div>
+                    <label htmlFor="industry" className="block text-sm font-medium mb-2">Industry</label>
+                    <select
+                      id="industry"
+                      name="industry"
+                      required
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
+                    >
+                      <option value="">Select your industry</option>
+                      <option value="retail">Retail & Grocery</option>
+                      <option value="manufacturing">Manufacturing</option>
+                      <option value="healthcare">Healthcare</option>
+                      <option value="logistics">Logistics & Distribution</option>
+                      <option value="hospitality">Hospitality</option>
+                      <option value="professional-services">Professional Services</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <ValidationError prefix="Industry" field="industry" errors={state.errors} />
+                  </div>
+
+                  <div>
+                    <label htmlFor="businessSize" className="block text-sm font-medium mb-2">Company Size</label>
+                    <select
+                      id="businessSize"
+                      name="businessSize"
+                      required
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
+                    >
+                      <option value="">Select company size</option>
+                      <option value="small">1-50 employees</option>
+                      <option value="medium">51-200 employees</option>
+                      <option value="large">201-1000 employees</option>
+                      <option value="enterprise">1000+ employees</option>
+                    </select>
+                    <ValidationError prefix="Business Size" field="businessSize" errors={state.errors} />
+                  </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">Business Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
+                  <label htmlFor="currentChallenges" className="block text-sm font-medium mb-2">
+                    Current Operational Challenges
+                  </label>
+                  <textarea
+                    id="currentChallenges"
+                    name="currentChallenges"
                     required
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                    placeholder="your@company.com"
+                    rows={4}
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none resize-none transition-colors"
+                    placeholder="What operational challenges is your business facing? (e.g., manual processes, scheduling issues, inventory management, compliance tracking, etc.)"
                   />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                    placeholder="(555) 123-4567"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="businessName" className="block text-sm font-medium mb-2">Company Name</label>
-                  <input
-                    type="text"
-                    id="businessName"
-                    name="businessName"
-                    value={formData.businessName}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                    placeholder="Your company name"
-                  />
+                  <ValidationError prefix="Current Challenges" field="currentChallenges" errors={state.errors} />
                 </div>
 
                 <div>
-                  <label htmlFor="industry" className="block text-sm font-medium mb-2">Industry</label>
-                  <select
-                    id="industry"
-                    name="industry"
-                    value={formData.industry}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
+                  <label htmlFor="automationInterest" className="block text-sm font-medium mb-2">
+                    Areas of Interest for Automation
+                  </label>
+                  <textarea
+                    id="automationInterest"
+                    name="automationInterest"
+                    rows={3}
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none resize-none transition-colors"
+                    placeholder="Which business processes do you think could benefit from automation? What would you like to spend less time on?"
+                  />
+                  <ValidationError prefix="Automation Interest" field="automationInterest" errors={state.errors} />
+                </div>
+                
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200 disabled:opacity-50"
                   >
-                    <option value="">Select your industry</option>
-                    <option value="retail">Retail & Grocery</option>
-                    <option value="manufacturing">Manufacturing</option>
-                    <option value="healthcare">Healthcare</option>
-                    <option value="logistics">Logistics & Distribution</option>
-                    <option value="hospitality">Hospitality</option>
-                    <option value="professional-services">Professional Services</option>
-                    <option value="other">Other</option>
-                  </select>
+                    <span>{state.submitting ? 'Sending...' : 'Request Consultation'}</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                  <p className="text-sm text-gray-400 mt-3">
+                    We'll contact you within 24 hours to schedule your consultation
+                  </p>
                 </div>
-
-                <div>
-                  <label htmlFor="businessSize" className="block text-sm font-medium mb-2">Company Size</label>
-                  <select
-                    id="businessSize"
-                    name="businessSize"
-                    value={formData.businessSize}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                  >
-                    <option value="">Select company size</option>
-                    <option value="small">1-50 employees</option>
-                    <option value="medium">51-200 employees</option>
-                    <option value="large">201-1000 employees</option>
-                    <option value="enterprise">1000+ employees</option>
-                  </select>
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="currentChallenges" className="block text-sm font-medium mb-2">
-                  Current Operational Challenges
-                </label>
-                <textarea
-                  id="currentChallenges"
-                  name="currentChallenges"
-                  value={formData.currentChallenges}
-                  onChange={handleInputChange}
-                  required
-                  rows={4}
-                  className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none resize-none transition-colors"
-                  placeholder="What operational challenges is your business facing? (e.g., manual processes, scheduling issues, inventory management, compliance tracking, etc.)"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="automationInterest" className="block text-sm font-medium mb-2">
-                  Areas of Interest for Automation
-                </label>
-                <textarea
-                  id="automationInterest"
-                  name="automationInterest"
-                  value={formData.automationInterest}
-                  onChange={handleInputChange}
-                  rows={3}
-                  className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none resize-none transition-colors"
-                  placeholder="Which business processes do you think could benefit from automation? What would you like to spend less time on?"
-                />
-              </div>
-              
-              <div className="text-center">
-                <button
-                  type="submit"
-                  className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
-                >
-                  <span>Request Consultation</span>
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-                <p className="text-sm text-gray-400 mt-3">
-                  We'll contact you within 24 hours to schedule your consultation
-                </p>
-              </div>
-            </form>
+              </form>
+            )}
           </motion.div>
         </div>
       </section>

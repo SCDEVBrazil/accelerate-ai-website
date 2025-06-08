@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle, Search, Cog, TrendingUp, Users, Shield, Target } from 'lucide-react'
+import { ArrowRight, CheckCircle, Search, Cog, TrendingUp, Users, Shield, Target, MapPin, Rocket, Brain, BarChart } from 'lucide-react'
 import { useState } from 'react'
 
 export default function ServicesPage() {
@@ -124,9 +124,9 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl font-bold mb-6"
           >
-            AI Automation Services
+            AI Services
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-              Built for Business Results
+              Tailored to Your Journey
             </span>
           </motion.h1>
           
@@ -136,12 +136,12 @@ export default function ServicesPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto"
           >
-            We partner with businesses to identify, implement, and optimize AI automation solutions that directly impact operational efficiency and profitability.
+            Whether you're exploring AI possibilities or ready to implement automation, we have the right service to meet your business where it is.
           </motion.p>
         </div>
       </section>
 
-      {/* Our Process */}
+      {/* Three Service Options */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -152,112 +152,228 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Our Partnership Process
+              Choose Your Path
             </h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              A systematic approach to identifying automation opportunities and implementing solutions that deliver measurable results.
+              Three distinct services designed to help your business leverage technology for growth and efficiency.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* AI Consulting & Strategy */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-900 to-black rounded-lg p-8 border border-gray-800 text-center"
+              className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-8 rounded-lg border border-blue-500/20"
             >
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-                <Search className="w-8 h-8" />
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                  <Brain className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-blue-400">AI Consulting & Strategy</h3>
+                  <p className="text-gray-400">For businesses exploring AI opportunities</p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4">1. Assessment & Discovery</h3>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                Comprehensive analysis of your current operations to identify high-impact automation opportunities and quantify potential savings.
+
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Not sure where AI fits in your business? Our expert consulting service helps you discover automation opportunities, assess feasibility, and create a strategic roadmap tailored to your operations.
               </p>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300">Operational workflow review</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300">Cost analysis and ROI projections</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300">Technology requirements assessment</span>
+
+              <div className="space-y-4 mb-8">
+                <h4 className="text-lg font-semibold text-blue-300">What You Get:</h4>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">Comprehensive Operational Assessment</span>
+                      <p className="text-sm text-gray-400">Deep dive into your workflows, bottlenecks, and inefficiencies</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">AI Opportunity Identification</span>
+                      <p className="text-sm text-gray-400">Prioritized list of automation opportunities with impact analysis</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">Custom Strategic Roadmap</span>
+                      <p className="text-sm text-gray-400">Step-by-step implementation plan with timelines and milestones</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">ROI Projections & Business Case</span>
+                      <p className="text-sm text-gray-400">Detailed financial analysis and expected returns</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              <div className="bg-blue-900/20 p-4 rounded-lg mb-6">
+                <p className="text-sm text-blue-300 font-medium">Investment Model:</p>
+                <p className="text-gray-300 text-sm">Professional consulting fee - Strategic guidance that pays for itself through informed decision-making</p>
+              </div>
+
+              <Link
+                href="/contact"
+                className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
+              >
+                <span>Schedule Consulting Call</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.div>
 
+            {/* Performance-Based Implementation */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-900 to-black rounded-lg p-8 border border-gray-800 text-center"
+              className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 p-8 rounded-lg border border-green-500/20"
             >
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center">
-                <Cog className="w-8 h-8" />
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-4">
+                  <Rocket className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-green-400">Performance-Based Implementation</h3>
+                  <p className="text-gray-400">For businesses ready to automate and optimize</p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4">2. Implementation & Integration</h3>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                Custom automation solutions designed specifically for your business processes, implemented with minimal disruption to operations.
+
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Ready to implement AI automation? We build and deploy custom solutions with zero upfront cost—you only pay from the measurable savings and efficiency gains we create for your business.
               </p>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300">Custom solution development</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300">System integration and testing</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300">Staff training and transition</span>
+
+              <div className="space-y-4 mb-8">
+                <h4 className="text-lg font-semibold text-green-300">What You Get:</h4>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">Custom Automation Development</span>
+                      <p className="text-sm text-gray-400">Solutions built specifically for your operations and workflows</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">Full Implementation & Integration</span>
+                      <p className="text-sm text-gray-400">End-to-end deployment with minimal business disruption</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">Continuous Optimization</span>
+                      <p className="text-sm text-gray-400">Ongoing monitoring, updates, and performance improvements</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">Results Tracking & Reporting</span>
+                      <p className="text-sm text-gray-400">Transparent documentation of savings and efficiency gains</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              <div className="bg-green-900/20 p-4 rounded-lg mb-6">
+                <p className="text-sm text-green-300 font-medium">Investment Model:</p>
+                <p className="text-gray-300 text-sm">Zero upfront cost - Compensation tied directly to documented savings and measurable results</p>
+              </div>
+
+              <Link
+                href="/contact"
+                className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
+              >
+                <span>Explore Partnership</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.div>
 
+            {/* Web Development & Design */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-900 to-black rounded-lg p-8 border border-gray-800 text-center"
+              className="bg-gradient-to-br from-orange-900/30 to-red-900/30 p-8 rounded-lg border border-orange-500/20"
             >
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
-                <TrendingUp className="w-8 h-8" />
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center mr-4">
+                  <Cog className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-orange-400">Web Development & Design</h3>
+                  <p className="text-gray-400">Modern websites that drive business growth</p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4">3. Optimization & Growth</h3>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                Continuous monitoring, optimization, and expansion of automation capabilities to maximize long-term value and efficiency gains across your operations.
+
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Need a professional website that converts visitors into customers? We create modern, fast, and mobile-optimized websites designed to grow your business and enhance your digital presence.
               </p>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300">Performance monitoring and reporting</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300">Ongoing optimization and updates</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300">Strategic expansion planning</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300">ROI tracking and documentation</span>
+
+              <div className="space-y-4 mb-8">
+                <h4 className="text-lg font-semibold text-orange-300">What You Get:</h4>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">Custom Website Design</span>
+                      <p className="text-sm text-gray-400">Unique design tailored to your brand and business goals</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">Mobile-First Development</span>
+                      <p className="text-sm text-gray-400">Responsive design that looks perfect on all devices</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">SEO Optimization</span>
+                      <p className="text-sm text-gray-400">Built-in search engine optimization to help customers find you</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-gray-200">Performance & Security</span>
+                      <p className="text-sm text-gray-400">Fast loading speeds, secure hosting, and ongoing maintenance</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              <div className="bg-orange-900/20 p-4 rounded-lg mb-6">
+                <p className="text-sm text-orange-300 font-medium">Investment Model:</p>
+                <p className="text-gray-300 text-sm">Project-based pricing - Transparent costs with flexible payment options to fit your budget</p>
+              </div>
+
+              <Link
+                href="/contact"
+                className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full font-semibold hover:from-orange-600 hover:to-red-700 transition-all duration-200"
+              >
+                <span>Discuss Your Project</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Service Areas */}
+      {/* Common Automation Areas */}
       <section className="py-20 px-4 bg-gray-900/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -268,14 +384,14 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Common Automation Areas
+              Areas Ripe for Automation
             </h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              While every business is unique, these are the most common areas where we help companies achieve significant operational improvements.
+              Although every business is unique and our consulting team can surely help you figure out your specific opportunities for automation, here are a few examples of business areas where AI automation typically delivers significant impact.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -288,7 +404,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-lg font-semibold mb-2">Inventory Management</h3>
               <p className="text-gray-400 text-sm">
-                Automated ordering, stock level optimization, and demand forecasting
+                Automated ordering, stock level optimization, demand forecasting, and supplier management
               </p>
             </motion.div>
 
@@ -302,9 +418,9 @@ export default function ServicesPage() {
               <div className="w-12 h-12 mx-auto mb-4 bg-green-500 rounded-full flex items-center justify-center">
                 <Users className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Scheduling & Workforce</h3>
+              <h3 className="text-lg font-semibold mb-2">HR & Scheduling</h3>
               <p className="text-gray-400 text-sm">
-                Optimized staff scheduling, payroll automation, and labor cost management
+                Staff scheduling optimization, payroll automation, performance tracking, and recruitment workflows
               </p>
             </motion.div>
 
@@ -320,7 +436,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-lg font-semibold mb-2">Compliance & Reporting</h3>
               <p className="text-gray-400 text-sm">
-                Automated compliance tracking, report generation, and audit preparation
+                Automated compliance tracking, regulatory reporting, audit preparation, and documentation
               </p>
             </motion.div>
 
@@ -334,93 +450,168 @@ export default function ServicesPage() {
               <div className="w-12 h-12 mx-auto mb-4 bg-orange-500 rounded-full flex items-center justify-center">
                 <Cog className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Back-Office Operations</h3>
+              <h3 className="text-lg font-semibold mb-2">Data Processing</h3>
               <p className="text-gray-400 text-sm">
-                Document processing, data entry automation, and workflow optimization
+                Document processing, data entry automation, file organization, and information extraction
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-black/30 p-6 rounded-lg text-center"
+            >
+              <div className="w-12 h-12 mx-auto mb-4 bg-red-500 rounded-full flex items-center justify-center">
+                <BarChart className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Sales & Marketing</h3>
+              <p className="text-gray-400 text-sm">
+                Lead qualification, email automation, customer segmentation, and campaign optimization
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-black/30 p-6 rounded-lg text-center"
+            >
+              <div className="w-12 h-12 mx-auto mb-4 bg-cyan-500 rounded-full flex items-center justify-center">
+                <TrendingUp className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Financial Operations</h3>
+              <p className="text-gray-400 text-sm">
+                Invoice processing, expense tracking, financial reporting, and budget monitoring
               </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Partnership Model */}
+      {/* Process Comparison */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Performance-Based Partnership
+              How Our Services Work
             </h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              Our unique compensation model ensures our success is directly tied to the value we create for your business.
+              Different approaches for different needs, but both focused on delivering real business value.
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg p-8 backdrop-blur-sm border border-blue-500/20"
-          >
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-red-400">Traditional Consulting</h3>
-                <ul className="space-y-3 text-gray-400">
-                  <li className="flex items-start space-x-2">
-                    <span className="text-red-400 mt-1">✗</span>
-                    <span>$200K-500K+ upfront investment</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-red-400 mt-1">✗</span>
-                    <span>No guarantee of results</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-red-400 mt-1">✗</span>
-                    <span>Consultant gets paid regardless of outcome</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-red-400 mt-1">✗</span>
-                    <span>Limited post-implementation support</span>
-                  </li>
-                </ul>
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Consulting Process */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h3 className="text-2xl font-bold text-blue-400 mb-6">Consulting Process</h3>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-sm font-bold">1</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-200 mb-2">Discovery & Assessment</h4>
+                  <p className="text-gray-400 text-sm">Comprehensive analysis of your operations, workflows, and current systems</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-green-400">Our Partnership Model</h3>
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>Zero upfront cost</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>Payment only from documented savings</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>We only succeed when you succeed</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>Long-term partnership and support</span>
-                  </li>
-                </ul>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-sm font-bold">2</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-200 mb-2">Opportunity Identification</h4>
+                  <p className="text-gray-400 text-sm">Map automation opportunities with priority ranking and impact assessment</p>
+                </div>
               </div>
-            </div>
-            
-            <div className="text-center p-6 bg-black/30 rounded-lg">
-              <p className="text-lg text-blue-400 font-semibold mb-2">Our Simple Promise</p>
-              <p className="text-gray-300">
-                If we don't create measurable value for your business, you don't pay us. 
-                Our compensation comes directly from the savings and efficiency gains we deliver.
-              </p>
-            </div>
-          </motion.div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-sm font-bold">3</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-200 mb-2">Strategic Roadmap</h4>
+                  <p className="text-gray-400 text-sm">Detailed implementation plan with timelines, resources, and ROI projections</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-sm font-bold">4</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-200 mb-2">Recommendations & Next Steps</h4>
+                  <p className="text-gray-400 text-sm">Clear guidance on how to proceed with implementation or vendor selection</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Implementation Process */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h3 className="text-2xl font-bold text-green-400 mb-6">Implementation Process</h3>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-sm font-bold">1</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-200 mb-2">Assessment & Strategy</h4>
+                  <p className="text-gray-400 text-sm">Rapid analysis to identify highest-impact automation opportunities</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-sm font-bold">2</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-200 mb-2">Custom Development</h4>
+                  <p className="text-gray-400 text-sm">Build automation solutions tailored specifically to your operations</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-sm font-bold">3</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-200 mb-2">Integration & Testing</h4>
+                  <p className="text-gray-400 text-sm">Deploy solutions with minimal disruption and comprehensive testing</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-sm font-bold">4</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-200 mb-2">Optimization & Growth</h4>
+                  <p className="text-gray-400 text-sm">Continuous monitoring, optimization, and expansion of automation capabilities</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -434,22 +625,27 @@ export default function ServicesPage() {
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Ready to Explore
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-              What's Possible?
-            </span>
+            Ready to Get Started?
           </h2>
           <p className="text-xl text-gray-400 mb-8">
-            Let's discuss how AI automation can optimize your operations and improve your bottom line. 
-            No pressure, just an honest assessment of the opportunities.
+            Whether you need strategic guidance or are ready for implementation, let's discuss how AI can transform your business operations.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
-          >
-            <span>Schedule a Consultation</span>
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
+            >
+              <span>Schedule Consulting Call</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
+            >
+              <span>Explore Partnership</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
         </motion.div>
       </section>
     </div>

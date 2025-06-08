@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, TrendingUp, Shield, Handshake } from 'lucide-react'
+import { ArrowRight, TrendingUp, Shield, Handshake, Search, MapPin, Rocket } from 'lucide-react'
 import CursorTrail from '../components/CursorTrail'
 import { useState } from 'react'
 
@@ -135,9 +135,9 @@ export default function HomePage() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
         >
-          AI Automation That{" "}
+          Discover, Design & Deploy{" "}
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-            Pays For Itself
+            AI That Pays For Itself
           </span>
         </motion.h1>
 
@@ -145,14 +145,25 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-4xl mb-12"
+          className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mb-12"
         >
-          <span className="block mb-4">
-            We partner with businesses to automate operations and optimize systems.
+          <span className="block mb-6 text-center">
+            We offer two distinct paths to AI success:
           </span>
-          <span className="block text-lg md:text-xl text-gray-400">
-            You only pay from the savings we create together.
-          </span>
+          <div className="grid md:grid-cols-2 gap-8 text-lg md:text-xl">
+            <div className="bg-blue-900/20 p-6 rounded-lg border border-blue-500/30">
+              <h3 className="text-xl md:text-2xl font-bold text-blue-400 mb-3">Expert AI Consulting</h3>
+              <p className="text-gray-300">
+                Professional strategic guidance to discover opportunities and create your automation roadmap.
+              </p>
+            </div>
+            <div className="bg-green-900/20 p-6 rounded-lg border border-green-500/30">
+              <h3 className="text-xl md:text-2xl font-bold text-green-400 mb-3">Performance-Based Implementation</h3>
+              <p className="text-gray-300">
+                Zero upfront cost automation deployment—you only pay from the measurable savings we create.
+              </p>
+            </div>
+          </div>
         </motion.p>
 
         <motion.div
@@ -162,22 +173,22 @@ export default function HomePage() {
           className="flex flex-col sm:flex-row gap-4"
         >
           <Link
-            href="/contact"
+            href="/services"
             className="group px-8 py-4 bg-white text-black rounded-full font-semibold hover:bg-gray-100 transition-all duration-200 flex items-center justify-center space-x-2"
           >
-            <span>Explore Partnership</span>
+            <span>Explore Consulting</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
           </Link>
           <Link
-            href="/services"
+            href="/contact"
             className="px-8 py-4 border border-gray-600 rounded-full font-semibold hover:border-gray-400 hover:bg-gray-900 transition-all duration-200"
           >
-            Our Approach
+            Ready for Results?
           </Link>
         </motion.div>
       </section>
 
-      {/* Key Points Section */}
+      {/* Three-Phase Process Section */}
       <section className="relative z-10 px-4 py-20">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -188,10 +199,90 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              True Partnership, Shared Success
+              Two Paths to AI Success
             </h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              We invest our expertise, you provide the opportunity. Together, we build automated systems that drive real results.
+              Whether you need strategic guidance to explore AI possibilities or you're ready for performance-based implementation, we have the right approach for your business.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-8 rounded-lg border border-blue-500/20"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                <Search className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">AI Consulting & Strategy</h3>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Not sure where AI fits? Our expert consulting helps you discover opportunities, assess feasibility, and create a strategic roadmap for your business.
+              </p>
+              <div className="text-sm text-gray-400 mb-4">
+                • Comprehensive operational assessment<br/>
+                • AI opportunity identification<br/>
+                • Custom strategic roadmap<br/>
+                • ROI projections and timeline
+              </div>
+              <Link
+                href="/services"
+                className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
+              >
+                <span>Learn About Consulting</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center bg-gradient-to-br from-green-900/30 to-emerald-900/30 p-8 rounded-lg border border-green-500/20"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+                <Rocket className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Performance-Based Implementation</h3>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Ready to automate and optimize? We implement AI solutions with zero upfront cost—you only pay from the measurable savings we create.
+              </p>
+              <div className="text-sm text-gray-400 mb-4">
+                • Zero upfront investment<br/>
+                • Custom automation solutions<br/>
+                • Pay only from proven savings<br/>
+                • Continuous optimization
+              </div>
+              <Link
+                href="/contact"
+                className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
+              >
+                <span>Explore Partnership</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Benefits Section */}
+      <section className="relative z-10 px-4 py-20">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Why Businesses Choose Our Approach
+            </h2>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+              From initial consultation to ongoing optimization, we're invested in your long-term success.
             </p>
           </motion.div>
 
@@ -206,9 +297,9 @@ export default function HomePage() {
               <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
                 <Shield className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Zero Upfront Risk</h3>
+              <h3 className="text-2xl font-bold mb-4">Expert Consulting</h3>
               <p className="text-gray-400 leading-relaxed">
-                No initial investment required. We only succeed when you do. Our compensation comes directly from the measurable savings we create for your business.
+                Professional AI strategy consulting for businesses exploring automation opportunities. Get clarity on where AI fits in your operations with expert guidance.
               </p>
             </motion.div>
 
@@ -222,9 +313,9 @@ export default function HomePage() {
               <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
                 <TrendingUp className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Proven Results</h3>
+              <h3 className="text-2xl font-bold mb-4">Guaranteed Results</h3>
               <p className="text-gray-400 leading-relaxed">
-                We focus on automating high-impact areas: inventory management, scheduling optimization, compliance tracking, and operational workflows that directly affect your bottom line.
+                Our performance-based model means we only succeed when you do. Implementation costs are recovered directly from the savings we create for your business.
               </p>
             </motion.div>
 
@@ -238,9 +329,9 @@ export default function HomePage() {
               <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center">
                 <Handshake className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Long-term Partnership</h3>
+              <h3 className="text-2xl font-bold mb-4">True Partnership</h3>
               <p className="text-gray-400 leading-relaxed">
-                We build solutions tailored to your specific operations. As your business grows, our AI systems evolve with you, continuously optimizing for maximum efficiency.
+                Custom solutions built specifically for your operations, with ongoing optimization and support. We grow with your business and adapt as your needs evolve.
               </p>
             </motion.div>
           </div>
@@ -258,10 +349,10 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Why Businesses Choose Our Model
+              Our Success Model
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12">
-              Traditional consultants require large upfront investments with uncertain returns. We align our success with yours through performance-based partnerships.
+              Unlike traditional consultants who charge upfront with uncertain returns, we align our success completely with yours.
             </p>
           </motion.div>
 
@@ -273,9 +364,9 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="bg-black/30 p-8 rounded-lg"
             >
-              <h3 className="text-4xl font-bold text-blue-400 mb-4">$0</h3>
+              <h3 className="text-4xl font-bold text-blue-400 mb-4">Strategic</h3>
               <p className="text-gray-300">
-                Upfront cost. We invest our time and expertise, you provide the opportunity to prove our value through real results.
+                Professional AI consulting and strategic assessment. Understand your automation potential and get a clear roadmap with expert guidance.
               </p>
             </motion.div>
 
@@ -286,9 +377,9 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="bg-black/30 p-8 rounded-lg"
             >
-              <h3 className="text-4xl font-bold text-purple-400 mb-4">100%</h3>
+              <h3 className="text-4xl font-bold text-purple-400 mb-4">Results-Only</h3>
               <p className="text-gray-300">
-                Aligned incentives. Our compensation is tied directly to the documented savings and efficiency gains we deliver.
+                Aligned incentives. Our compensation comes directly from the documented savings and efficiency gains we deliver to your business.
               </p>
             </motion.div>
 
@@ -301,7 +392,7 @@ export default function HomePage() {
             >
               <h3 className="text-4xl font-bold text-green-400 mb-4">Custom</h3>
               <p className="text-gray-300">
-                Solutions built specifically for your operations, not one-size-fits-all software that requires you to adapt.
+                Solutions built specifically for your operations, not one-size-fits-all software that requires you to adapt your processes.
               </p>
             </motion.div>
           </div>
@@ -320,11 +411,11 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Ready to explore{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-              what's possible?
+              your AI opportunities?
             </span>
           </h2>
           <p className="text-xl text-gray-400 mb-8">
-            Let's discuss how AI automation can optimize your operations and put money back in your pocket.
+            Whether you need strategic consulting or are ready for performance-based implementation, let's discuss how AI can transform your business.
           </p>
           <Link
             href="/contact"

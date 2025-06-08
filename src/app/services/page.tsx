@@ -159,14 +159,14 @@ export default function ServicesPage() {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
             {/* AI Consulting & Strategy */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-8 rounded-lg border border-blue-500/20"
+              className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-8 rounded-lg border border-blue-500/20 flex flex-col h-full"
             >
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
@@ -221,13 +221,15 @@ export default function ServicesPage() {
                 <p className="text-gray-300 text-sm">Professional consulting fee - Strategic guidance that pays for itself through informed decision-making</p>
               </div>
 
-              <Link
-                href="/contact"
-                className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
-              >
-                <span>Schedule Consulting Call</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <div className="mt-auto">
+                <Link
+                  href="/contact"
+                  className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
+                >
+                  <span>Schedule Consulting Call</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </motion.div>
 
             {/* Performance-Based Implementation */}
@@ -236,7 +238,7 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 p-8 rounded-lg border border-green-500/20"
+              className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 p-8 rounded-lg border border-green-500/20 flex flex-col h-full"
             >
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-4">
@@ -259,28 +261,28 @@ export default function ServicesPage() {
                     <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                     <div>
                       <span className="font-medium text-gray-200">Custom Automation Development</span>
-                      <p className="text-sm text-gray-400">Solutions built specifically for your operations and workflows</p>
+                      <p className="text-sm text-gray-400">AI solutions built specifically for your unique operations and workflows</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                     <div>
                       <span className="font-medium text-gray-200">Full Implementation & Integration</span>
-                      <p className="text-sm text-gray-400">End-to-end deployment with minimal business disruption</p>
+                      <p className="text-sm text-gray-400">End-to-end deployment with minimal business disruption and comprehensive testing</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                     <div>
                       <span className="font-medium text-gray-200">Continuous Optimization</span>
-                      <p className="text-sm text-gray-400">Ongoing monitoring, updates, and performance improvements</p>
+                      <p className="text-sm text-gray-400">Ongoing monitoring, updates, and performance improvements for maximum efficiency</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                     <div>
                       <span className="font-medium text-gray-200">Results Tracking & Reporting</span>
-                      <p className="text-sm text-gray-400">Transparent documentation of savings and efficiency gains</p>
+                      <p className="text-sm text-gray-400">Transparent documentation of savings and efficiency gains achieved</p>
                     </div>
                   </div>
                 </div>
@@ -288,16 +290,18 @@ export default function ServicesPage() {
 
               <div className="bg-green-900/20 p-4 rounded-lg mb-6">
                 <p className="text-sm text-green-300 font-medium">Investment Model:</p>
-                <p className="text-gray-300 text-sm">Zero upfront cost - Compensation tied directly to documented savings and measurable results</p>
+                <p className="text-gray-300 text-sm">Zero upfront cost - Compensation tied directly to documented savings and measurable results you achieve</p>
               </div>
 
-              <Link
-                href="/contact"
-                className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
-              >
-                <span>Explore Partnership</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <div className="mt-auto">
+                <Link
+                  href="/contact"
+                  className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
+                >
+                  <span>Explore Partnership</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </motion.div>
 
             {/* Web Development & Design */}
@@ -306,7 +310,7 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-orange-900/30 to-red-900/30 p-8 rounded-lg border border-orange-500/20"
+              className="bg-gradient-to-br from-orange-900/30 to-red-900/30 p-8 rounded-lg border border-orange-500/20 flex flex-col h-full"
             >
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center mr-4">
@@ -361,13 +365,15 @@ export default function ServicesPage() {
                 <p className="text-gray-300 text-sm">Project-based pricing - Transparent costs with flexible payment options to fit your budget</p>
               </div>
 
-              <Link
-                href="/contact"
-                className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full font-semibold hover:from-orange-600 hover:to-red-700 transition-all duration-200"
-              >
-                <span>Discuss Your Project</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <div className="mt-auto">
+                <Link
+                  href="/contact"
+                  className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full font-semibold hover:from-orange-600 hover:to-red-700 transition-all duration-200"
+                >
+                  <span>Discuss Your Project</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>

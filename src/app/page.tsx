@@ -137,7 +137,7 @@ export default function HomePage() {
         >
           Discover, Design & Deploy{" "}
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-            AI That Pays For Itself
+            Technology That Drives Results
           </span>
         </motion.h1>
 
@@ -148,19 +148,25 @@ export default function HomePage() {
           className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mb-12"
         >
           <span className="block mb-6 text-center">
-            We offer two distinct paths to AI success:
+            We offer three distinct paths to technology success:
           </span>
-          <div className="grid md:grid-cols-2 gap-8 text-lg md:text-xl">
+          <div className="grid md:grid-cols-3 gap-6 text-lg md:text-xl">
             <div className="bg-blue-900/20 p-6 rounded-lg border border-blue-500/30">
               <h3 className="text-xl md:text-2xl font-bold text-blue-400 mb-3">Expert AI Consulting</h3>
               <p className="text-gray-300">
-                Professional strategic guidance to discover opportunities and create your automation roadmap.
+                Strategic guidance to discover automation opportunities and create your AI roadmap.
               </p>
             </div>
             <div className="bg-green-900/20 p-6 rounded-lg border border-green-500/30">
-              <h3 className="text-xl md:text-2xl font-bold text-green-400 mb-3">Performance-Based Implementation</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-green-400 mb-3">Performance-Based AI Implementation</h3>
               <p className="text-gray-300">
-                Zero upfront cost automation deployment—you only pay from the measurable savings we create.
+                Zero upfront cost automation—you only pay from measurable savings we create.
+              </p>
+            </div>
+            <div className="bg-orange-900/20 p-6 rounded-lg border border-orange-500/30">
+              <h3 className="text-xl md:text-2xl font-bold text-orange-400 mb-3">Web Development & Design</h3>
+              <p className="text-gray-300">
+                Modern, fast websites designed to grow your business and enhance your digital presence.
               </p>
             </div>
           </div>
@@ -199,14 +205,14 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Two Paths to AI Success
+              Three Paths to Technology Success
             </h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              Whether you need strategic guidance to explore AI possibilities or you're ready for performance-based implementation, we have the right approach for your business.
+              Whether you need AI strategy, automation implementation, or a modern website, we have the right approach for your business needs.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-3 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -219,7 +225,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-2xl font-bold mb-4">AI Consulting & Strategy</h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Not sure where AI fits? Our expert consulting helps you discover opportunities, assess feasibility, and create a strategic roadmap for your business.
+                Not sure where AI fits? Our expert consulting helps you discover opportunities, assess feasibility, and create a strategic roadmap.
               </p>
               <div className="text-sm text-gray-400 mb-4">
                 • Comprehensive operational assessment<br/>
@@ -246,9 +252,9 @@ export default function HomePage() {
               <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
                 <Rocket className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Performance-Based Implementation</h3>
+              <h3 className="text-2xl font-bold mb-4">Performance-Based AI Implementation</h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Ready to automate and optimize? We implement AI solutions with zero upfront cost—you only pay from the measurable savings we create.
+                Ready to automate? We implement AI solutions with zero upfront cost—you only pay from measurable savings we create.
               </p>
               <div className="text-sm text-gray-400 mb-4">
                 • Zero upfront investment<br/>
@@ -261,6 +267,37 @@ export default function HomePage() {
                 className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
               >
                 <span>Explore Partnership</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-center bg-gradient-to-br from-orange-900/30 to-red-900/30 p-8 rounded-lg border border-orange-500/20"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Web Development & Design</h3>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Need a professional website? We create modern, fast, and mobile-optimized websites designed to grow your business.
+              </p>
+              <div className="text-sm text-gray-400 mb-4">
+                • Custom website design<br/>
+                • Mobile-first development<br/>
+                • SEO optimization<br/>
+                • Performance & security
+              </div>
+              <Link
+                href="/contact"
+                className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full font-semibold hover:from-orange-600 hover:to-red-700 transition-all duration-200"
+              >
+                <span>Discuss Your Project</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
@@ -282,7 +319,7 @@ export default function HomePage() {
               Why Businesses Choose Our Approach
             </h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              From initial consultation to ongoing optimization, we're invested in your long-term success.
+              From AI strategy to web development, we're invested in your long-term technology success.
             </p>
           </motion.div>
 
@@ -415,7 +452,7 @@ export default function HomePage() {
             </span>
           </h2>
           <p className="text-xl text-gray-400 mb-8">
-            Whether you need strategic consulting or are ready for performance-based implementation, let's discuss how AI can transform your business.
+            Whether you need AI strategy, automation implementation, or a modern website, let's discuss how technology can transform your business.
           </p>
           <Link
             href="/contact"
